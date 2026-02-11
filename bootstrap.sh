@@ -15,23 +15,27 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     rm "$HOME.zshrc.pre-oh-my-zsh"
 fi
 
+link() {
+    [[ -e $2 ]] || ln -s "$1" "$2"
+}
+
 localbin="$HOME/.local/bin"
 
 mkdir -p "$localbin"
 
-ln -s "$dotfiles/oh-my-zsh.sunaku-zapling.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/sunaku-zapling.zsh-theme"
-ln -s "$dotfiles/.gitconfig" "$HOME"
-ln -s "$dotfiles/.zshrc" "$HOME"
-ln -s "$dotfiles/.zshenv" "$HOME"
+link "$dotfiles/oh-my-zsh.sunaku-zapling.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/sunaku-zapling.zsh-theme"
+link "$dotfiles/.gitconfig" "$HOME"
+link "$dotfiles/.zshrc" "$HOME"
+link "$dotfiles/.zshenv" "$HOME"
 
-ln -s "$dotfiles/.local/bin/host" "$localbin/"
-ln -s "$dotfiles/.local/bin/arch" "$localbin/"
+link "$dotfiles/.local/bin/host" "$localbin/"
+link "$dotfiles/.local/bin/arch" "$localbin/"
 
-ln -s "$dotfiles/.config/alacritty" "$HOME/.config/"
-ln -s "$dotfiles/.config/git" "$HOME/.config/"
-ln -s "$dotfiles/.config/i3blocks" "$HOME/.config"
-ln -s "$dotfiles/.config/kanshi" "$HOME/.config"
-ln -s "$dotfiles/.config/nvim_zapling" "$HOME/.config"
-ln -s "$dotfiles/.config/sway" "$HOME/.config"
-ln -s "$dotfiles/.config/wofi" "$HOME/.config"
-ln -s "$dotfiles/.config/zsh" "$HOME/.config"
+link "$dotfiles/.config/alacritty" "$HOME/.config/"
+link "$dotfiles/.config/git" "$HOME/.config/"
+link "$dotfiles/.config/i3blocks" "$HOME/.config"
+link "$dotfiles/.config/kanshi" "$HOME/.config"
+link "$dotfiles/.config/nvim_zapling" "$HOME/.config"
+link "$dotfiles/.config/sway" "$HOME/.config"
+link "$dotfiles/.config/wofi" "$HOME/.config"
+link "$dotfiles/.config/zsh" "$HOME/.config"
