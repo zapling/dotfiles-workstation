@@ -1,11 +1,12 @@
-if [[ "$CONTAINER_ID" == "" ]]; then
-	echo "You are on the HOST system."
-	alias upgrade="sudo bootc upgrade"
-	return
+# System defaults
+# None
+
+system="host"
+if [[ "$CONTAINER_ID" != "" ]]; then
+	system=$(. /etc/os-release && echo "$ID")
 fi
 
-os_id=$(. /etc/os-release && echo "$ID")
-zshrc="$HOME/.zshrc.$os_id"
+zshrc="$HOME/dotfiles/zsh/.zshrc.$os_id"
 if [[ -e $zshrc ]]; then
 	source $zshrc
 fi
