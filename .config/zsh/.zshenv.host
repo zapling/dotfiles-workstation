@@ -1,1 +1,1 @@
-PATH=~/.local/bin/host:$PATH
+export PATH=~/.local/bin/host:$PATH
