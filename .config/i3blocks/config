@@ -1,0 +1,58 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=/home/andreas/.config/i3blocks/scripts/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# Needs converting to podman...
+#[docker-reclaimable-space]
+#interval=3600
+#color=#fb4833
+
+#[timewarrior]
+#label=󰔛 
+#interval=5
+#color=#b8ba25
+
+#[timetracker]
+#command=~/.local/bin/timetracker --current
+#label=󱎫 
+#interval=60
+#color=#ebdbb2
+
+[running-containers]
+interval=60
+color=#83a598
+
+[keyboard-layout]
+interval=2
+color=#b8bb26
+
+[time]
+interval=5
+color=#ebdbb2

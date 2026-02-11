@@ -1,0 +1,11 @@
+#!/bin/bash
+# Get only the currently active tracking entry (ID @1)
+current=$(timew export @1 2>/dev/null)
+
+# Check if there's an active entry (no "end" field means it's ongoing)
+if [ -n "$current" ] && ! echo "$current" | jq -e '.[0].end' >/dev/null 2>&1; then
+    tags=$(echo "$current" | jq -r '.[0].tags | join(" ")')
+    echo "$tags"
+else
+    exit 0
+fi

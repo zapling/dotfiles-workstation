@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+DOCKER_ACTIVE_CONTAINERS=0
+if [[ command -v "docker" ]]; then
+	DOCKER_NUM=$(docker ps | wc -l)
+	DOCKER_ACTIVE_CONTAINERS="$((DOCKER_NUM-1))"
+fi
+
+PODMAN_ACTIVE_CONTAINERS=0
+if [[ command -v "podman" ]]; then
+	PODMAN_NUM=$(podman ps | wc -l)
+	PODMAN_ACTIVE_CONTAINERS="$((PODMAN_NUM-1))"
+fi
+
+if [[ $DOCKER_ACTIVE_CONTAINERS -gt 0 ]] || [[ $PODMAN_ACTIVE_CONTAINERS -gt 0 ]]; then
+    echo " [${DOCKER_ACTIVE_CONTAINERS}] [${PODMAN_ACTIVE_CONTAINERS}]"
+fi
