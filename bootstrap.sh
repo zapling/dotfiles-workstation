@@ -19,6 +19,7 @@ localbin="$HOME/.local/bin"
 
 mkdir -p "$localbin"
 
+ln -s "$dotfiles/oh-my-zsh.sunaku-zapling.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/sunaku-zapling.zsh-theme"
 ln -s "$dotfiles/.gitconfig" "$HOME"
 ln -s "$dotfiles/.zshrc" "$HOME"
 ln -s "$dotfiles/.zshenv" "$HOME"
