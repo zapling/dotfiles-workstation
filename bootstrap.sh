@@ -44,6 +44,7 @@ link "$dotfiles/.local/bin/host" "$localbin/"
 link "$dotfiles/.local/bin/arch" "$localbin/"
 
 link "$dotfiles/.config/alacritty" "$HOME/.config/"
+link "$dotfiles/.config/DankMaterialShell" "$HOME/.config/"
 link "$dotfiles/.config/git" "$HOME/.config/"
 link "$dotfiles/.config/i3blocks" "$HOME/.config"
 link "$dotfiles/.config/kanshi" "$HOME/.config"
