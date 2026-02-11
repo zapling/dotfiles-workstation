@@ -90,8 +90,8 @@ input "1452:613:Apple_Inc._Magic_Trackpad" {
 
 exec /usr/bin/dms run
 exec /usr/bin/kanshi
-exec /usr/bin/alacritty --class dropdown1
-exec /usr/bin/alacritty --class dropdown2
+exec /usr/bin/alacritty --class dropdown1 -e distrobox enter arch
+exec /usr/bin/alacritty --class dropdown2 -e distrobox enter arch
 
 ### Statusbar
 
@@ -122,8 +122,8 @@ bar {
     bindsym $mod+Return exec $term -e distrobox enter arch
 
     # Dropdown terminals
-    bindsym $mod+u exec ~/.local/bin/scripts/swayvm-toggle-scratchpad dropdown1
-    bindsym $mod+Shift+u exec ~/.local/bin/scripts/swayvm-toggle-scratchpad dropdown2
+    bindsym $mod+u exec ~/.local/bin/host/sway-toggle-scratchpad dropdown1
+    bindsym $mod+Shift+u exec ~/.local/bin/host/sway-toggle-scratchpad dropdown2
 
     # Browser
     bindsym $mod+Shift+t exec firefox

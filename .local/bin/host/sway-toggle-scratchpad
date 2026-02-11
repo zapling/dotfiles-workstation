@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+target=$1
+data=$(swaymsg -t get_tree | jq ".. | select(.type?) | select(.app_id==\"$target\" or .window_properties.class==\"$target\")")
+id=$(echo "$data" | jq ".id")
+swaymsg "[con_id=$id] scratchpad show"
