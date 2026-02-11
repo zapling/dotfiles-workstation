@@ -24,7 +24,11 @@ if [[ ! -d "$HOME/P" ]]; then
 fi
 
 link() {
-    [[ -e $2 ]] || ln -s "$1" "$2"
+    src="$1"
+    dst="$2"
+    # If destination is a directory, append the source filename
+    [[ -d $dst ]] && dst="$dst/$(basename "$src")"
+    [[ -e $dst ]] || ln -s "$src" "$dst"
 }
 
 localbin="$HOME/.local/bin"
