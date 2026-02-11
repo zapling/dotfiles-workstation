@@ -24,7 +24,7 @@ output_parts = []
 if docker_active > 0:
     output_parts.append(f" [{docker_active}]")
 if podman_active > 0:
-    output_parts.append(f"[{podman_active}]")
+    output_parts.append(f" [{podman_active}]")
 
 if output_parts:
     print(" ".join(output_parts))
