@@ -15,6 +15,14 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     rm "$HOME.zshrc.pre-oh-my-zsh"
 fi
 
+if [[ ! -d "$HOME/R" ]]; then
+    mkdir "$HOME/R"
+fi
+
+if [[ ! -d "$HOME/P" ]]; then
+    mkdir "$HOME/P"
+fi
+
 link() {
     [[ -e $2 ]] || ln -s "$1" "$2"
 }
