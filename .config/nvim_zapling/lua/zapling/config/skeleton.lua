@@ -1,16 +1,18 @@
+local config_path = vim.fn.stdpath('config')
+
 local skeletons = {
-    { pattern = '.envrc',     skeleton_file = '~/.config/nvim_zap25/skeleton/.envrc' },
-    { pattern = 'index.html', skeleton_file = '~/.config/nvim_zap25/skeleton/index.html' },
-    { pattern = '*.sh',       skeleton_file = '~/.config/nvim_zap25/skeleton/script.sh' },
+    { pattern = '.envrc',     skeleton_file = config_path .. '/skeleton/.envrc' },
+    { pattern = 'index.html', skeleton_file = config_path .. '/skeleton/index.html' },
+    { pattern = '*.sh',       skeleton_file = config_path .. '/skeleton/script.sh' },
     {
         pattern = '*.go',
         callback = function(args)
             if vim.fn.fnamemodify(args.file, ':t') == 'main.go' then
-                vim.cmd('silent! 0r ~/.config/nvim_zap25/skeleton/main.go')
+                vim.cmd('silent! 0r ' .. config_path .. '/skeleton/main.go')
                 return
             end
             local dirname = vim.fn.expand('%:p:h:t')
-            vim.cmd('silent! 0r ~/.config/nvim_zap25/skeleton/file.go')
+            vim.cmd('silent! 0r ' .. config_path .. '/skeleton/file.go')
             vim.cmd('%s/PLACEHOLDER/' .. dirname)
             vim.cmd('norm 0$')
         end
