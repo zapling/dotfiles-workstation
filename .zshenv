@@ -7,7 +7,7 @@ if [[ "$CONTAINER_ID" != "" ]]; then
     system=$(. /etc/os-release && echo "$ID")
 fi
 
-zshenv="$HOME/.config/zsh/.zshenv.$os_id"
+zshenv="$HOME/.config/zsh/.zshenv.$system"
 if [[ -e $zshenv ]]; then
     source $zshenv
 fi
