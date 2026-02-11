@@ -1,13 +1,40 @@
 zstyle ':omz:update' mode disabled
 
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="sunaku-zapling"
-
 HISTORY_IGNORE="(jwt-decode*|systemctl poweroff)"
 
-plugins=(
-    git
-)
-
+# oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="sunaku-zapling"
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+eval "$(direnv hook zsh)"
+
+# Dialog before doing stupid stuff
+function git() {
+    confirm=0
+
+    # confirm before doing hard resets
+    if [[ "$1" == "reset" ]] && [[ "$2" == "--hard" ]]; then
+        confirm=1
+    fi
+
+    if [[ "$1" == "push" ]] && [[ "$2" == "-f" ]]; then
+        confirm=1
+    fi
+
+    if [[ "$1" == "clean" ]] && [[ "$2" == "-f" ]] || [[ "$2" == "-fd" ]]; then
+        confirm=1
+    fi
+
+    if [[ $confirm -eq 1 ]]; then
+        echo "Are you being retarded? Press any key to continue..."
+        read -sk1
+        echo ""
+    fi
+
+    command git $@
+}
+
+alias vi="nvim --clean"
+alias vim="NVIM_APPNAME=nvim_zapling nvim"
