@@ -4,10 +4,10 @@ export BROWSER=/usr/bin/firefox
 
 system="host"
 if [[ "$CONTAINER_ID" != "" ]]; then
-	system=$(. /etc/os-release && echo "$ID")
+    system=$(. /etc/os-release && echo "$ID")
 fi
 
 zshenv="$HOME/.config/zsh/.zshenv.$os_id"
 if [[ -e $zshenv ]]; then
-	source $zshenv
+    source $zshenv
 if
