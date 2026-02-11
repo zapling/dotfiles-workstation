@@ -7,7 +7,6 @@ if [[ "$CONTAINER_ID" != "" ]]; then
 fi
 
 zshrc="$HOME/.config/zsh/.zshrc.$system"
-echo $zshrc
 if [[ -e $zshrc ]]; then
 	source $zshrc
 fi
