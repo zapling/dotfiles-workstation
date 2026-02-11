@@ -10,4 +10,4 @@ fi
 zshenv="$HOME/.config/zsh/.zshenv.$os_id"
 if [[ -e $zshenv ]]; then
     source $zshenv
-if
+fi
