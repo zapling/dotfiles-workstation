@@ -1,0 +1,6 @@
+# System wide .gitignore
+.git/
+*.key
+*.pem
+go.work
+go.work.sum

@@ -1,0 +1,55 @@
+[init]
+    defaultBranch = main
+
+[user]
+    name = Andreas Palm
+
+[include]
+    path = ~/.config/git/config_base
+
+[includeIf "gitdir:~/R/"]
+    path = ~/.config/git/config_work
+
+[core]
+    excludesfile = ~/.config/git/gitignore_global
+
+[log]
+    decorate = true
+
+[commit]
+    verbose = true
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[pull]
+    rebase = true
+
+[merge]
+    conflictstyle = zdiff3
+
+# https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash
+[rebase]
+    autoStash = true
+    autoSquash = true
+
+[diff]
+    wsErrorHighlight = all
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[url "ssh://git@github.com/zapling"]
+    insteadof = https://github.com/zapling
+
+[url "ssh://git@github.com/ertia-io"]
+    insteadof = https://github.com/ertia-io
+
+[url "ssh://git@github.com/dinafastighetergo"]
+    insteadof = https://github.com/dinafastighetergo
+
+[url "ssh://git@bitbucket.org/matpriskollen"]
+    insteadOf = https://bitbucket.org/matpriskollen
