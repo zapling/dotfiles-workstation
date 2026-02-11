@@ -1,4 +1,5 @@
 autoload -U promptinit && promptinit
 PS1='%(?.%F{green}.%F{red})%n@%m:%~%# %f'
 
+alias l="ls -la"
 alias ".."="cd .."
