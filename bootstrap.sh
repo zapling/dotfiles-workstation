@@ -15,6 +15,15 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     rm "$HOME.zshrc.pre-oh-my-zsh"
 fi
 
+# Install LiberationMono Nerd Font (LiterationMono)
+font_version=v3.4.0
+if [[ ! -d "$HOME/.fonts" ]]; then
+    curl "https://github.com/ryanoasis/nerd-fonts/releases/download/$font_version/LiberationMono.zip" -L --output "/tmp/LiberationMono.zip" && \
+        mkdir "$HOME/.fonts" && \
+        unzip /tmp/LiberationMono.zip -d "$HOME/.fonts" && \
+        fc-cache -fv
+fi
+
 if [[ ! -d "$HOME/R" ]]; then
     mkdir "$HOME/R"
 fi
@@ -22,6 +31,8 @@ fi
 if [[ ! -d "$HOME/P" ]]; then
     mkdir "$HOME/P"
 fi
+
+# Symlink config
 
 link() {
     src="$1"
