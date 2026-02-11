@@ -1,0 +1,13 @@
+zstyle ':omz:update' mode disabled
+
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="sunaku-zapling"
+
+HISTORY_IGNORE="(jwt-decode*|systemctl poweroff)"
+
+plugins=(
+    git
+)
+
+source $ZSH/oh-my-zsh.sh
