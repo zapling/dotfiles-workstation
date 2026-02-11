@@ -1,0 +1,19 @@
+profile home {
+    output eDP-1 disable
+    output "Microstep MAG274QRF-QD CA8A671500064" mode 2560x1440 position 0,0 scale 1.0
+}
+
+profile work {
+    output eDP-1 disable
+    output "BNQ BenQ PD3205U B5N00995019" mode 3840x2160 position 0,0 scale 1.4
+}
+
+# profile work-grandmas-office {
+#     output "Samsung Electric Company SAMSUNG 0x01000E00" position 0,0 mode 3840x2160 scale 1.0
+#     output eDP-1 enable position 0,2160
+#     exec swaymsg workspace 10 output "Samsung Electric Company SAMSUNG 0x01000E00"
+# }
+
+profile {
+    output eDP-1 enable scale 1.25
+}
