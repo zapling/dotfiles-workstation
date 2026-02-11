@@ -1,17 +1,30 @@
-#!/usr/bin/bash
+#!/usr/bin/env python3
 
-DOCKER_ACTIVE_CONTAINERS=0
-if [[ command -v "docker" ]]; then
-	DOCKER_NUM=$(docker ps | wc -l)
-	DOCKER_ACTIVE_CONTAINERS="$((DOCKER_NUM-1))"
-fi
+import shutil
+import subprocess
 
-PODMAN_ACTIVE_CONTAINERS=0
-if [[ command -v "podman" ]]; then
-	PODMAN_NUM=$(podman ps | wc -l)
-	PODMAN_ACTIVE_CONTAINERS="$((PODMAN_NUM-1))"
-fi
+def count_containers(command):
+    try:
+        result = subprocess.run(
+            [command, "ps", "-q"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            check=False,
+        )
+        return len(result.stdout.strip().splitlines()) if result.stdout else 0
+    except Exception:
+        return 0
 
-if [[ $DOCKER_ACTIVE_CONTAINERS -gt 0 ]] || [[ $PODMAN_ACTIVE_CONTAINERS -gt 0 ]]; then
-    echo " [${DOCKER_ACTIVE_CONTAINERS}] [${PODMAN_ACTIVE_CONTAINERS}]"
-fi
+
+docker_active = count_containers("docker") if shutil.which("docker") else 0
+podman_active = count_containers("podman") if shutil.which("podman") else 0
+
+output_parts = []
+if docker_active > 0:
+    output_parts.append(f" [{docker_active}]")
+if podman_active > 0:
+    output_parts.append(f"[{podman_active}]")
+
+if output_parts:
+    print(" ".join(output_parts))
