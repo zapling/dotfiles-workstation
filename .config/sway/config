@@ -146,6 +146,9 @@ bar {
     bindsym XF86AudioMute exec dms ipc call audio mute
     bindsym XF86AudioMicMute exec dms ipc call audio micmute
 
+    # Screenshot
+    bindsym Print exec dms screenshot
+
 ### Styling
 
     # for_window [app_id="terminal-summon"] move scratchpad
