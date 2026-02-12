@@ -38,3 +38,24 @@ function git() {
 
 alias vi="nvim --clean"
 alias vim="NVIM_APPNAME=nvim_zapling nvim"
+
+alias k="kubectl"
+alias kx="kubectx"
+
+alias gom="go mod tidy && go mod vendor"
+
+alias ertia!="~/R/ertia/cli/dist/bin/ertia/linux/amd64/ertia"
+alias ertia02="ertia ertia02"
+alias ertia03="ertia ertia03"
+
+alias aws="docker run --rm \
+  -e AWS_ACCESS_KEY_ID \
+  -e AWS_SECRET_ACCESS_KEY \
+  -e AWS_DEFAULT_REGION \
+  -e AWS_ENDPOINT_URL_S3 \
+  -e AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED \
+  -e AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED \
+  -v $(pwd):/aws \
+  amazon/aws-cli"
+
+source <(ertia completion zsh)
