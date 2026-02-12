@@ -16,7 +16,7 @@ set $gaps_inner 50
 set $gaps_focus 600
 
 set $term /usr/bin/alacritty
-set $menu "wofi -d"
+set $menu "dms ipc call spotlight toggle"
 
 # gruvbox colors
 set $darkred     "#cc241d"
@@ -133,6 +133,7 @@ bar {
     bindsym $mod+Shift+f exec thunar
 
     # System
+    bindsym $mod+Shift+Delete exec dms ipc call powermenu toggle
     bindsym $mod+Shift+s exec pavucontrol
     bindsym $mod+n exec dms ipc call notifications open
 
