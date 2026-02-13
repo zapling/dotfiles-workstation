@@ -62,9 +62,9 @@
   "controlCenterShowPrinterIcon": false,
   "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
-  "privacyShowMicIcon": false,
-  "privacyShowCameraIcon": false,
-  "privacyShowScreenShareIcon": false,
+  "privacyShowMicIcon": true,
+  "privacyShowCameraIcon": true,
+  "privacyShowScreenShareIcon": true,
   "controlCenterWidgets": [
     {
       "id": "volumeSlider",
@@ -141,16 +141,16 @@
   "lockDateFormat": "",
   "mediaSize": 1,
   "appLauncherViewMode": "grid",
-  "spotlightModalViewMode": "list",
+  "spotlightModalViewMode": "grid",
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "vpnLastConnected": "",
-  "iconTheme": "System Default",
+  "iconTheme": "Adwaita",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,
@@ -177,7 +177,7 @@
   "fontFamily": "LiterationMono Nerd Font",
   "monoFontFamily": "Liberation Mono",
   "fontWeight": 400,
-  "fontScale": 1.2,
+  "fontScale": 1,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -238,8 +238,8 @@
   "matugenTemplateAlacritty": true,
   "matugenTemplateNeovim": false,
   "matugenTemplateWezterm": false,
-  "matugenTemplateDgop": false,
-  "matugenTemplateKcolorscheme": false,
+  "matugenTemplateDgop": true,
+  "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": false,
   "showDock": false,
   "dockAutoHide": false,
@@ -332,19 +332,20 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
-          "id": "launcherButton",
+          "id": "privacyIndicator",
           "enabled": true
+        },
+        {
+          "id": "launcherButton",
+          "enabled": false
         },
         {
           "id": "focusedWindow",
-          "enabled": true
+          "enabled": false,
+          "focusedWindowCompactMode": false
         }
       ],
       "centerWidgets": [
-        {
-          "id": "music",
-          "enabled": true
-        },
         {
           "id": "clock",
           "enabled": true
@@ -371,6 +372,10 @@
         },
         {
           "id": "battery",
+          "enabled": true
+        },
+        {
+          "id": "idleInhibitor",
           "enabled": true
         },
         {
