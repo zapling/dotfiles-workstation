@@ -78,7 +78,7 @@ input type:touch {
     events disabled
 }
 
-input "76:613:Apple_Inc._Magic_Trackpad" {
+input "76:613:Apple_Inc._Magic_Trackpad_2021" {
     natural_scroll disabled
 }
 
