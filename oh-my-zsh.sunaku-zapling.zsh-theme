@@ -75,7 +75,7 @@ kube_context() {
 
 distrobox_container() {
     if [[ "$CONTAINER_ID" == "" ]]; then
-        # echo "󰠦 "
+        echo "%{$fg[red]%} %{$reset_color%}"
         return
     fi
 
