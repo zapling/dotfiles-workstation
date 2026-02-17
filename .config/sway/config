@@ -150,6 +150,9 @@ bar {
     # Screenshot
     bindsym Print exec dms screenshot
 
+    # Notepad
+    bindsym $mod+t exec dms ipc call notepad toggle
+
 ### Styling
 
     # for_window [app_id="terminal-summon"] move scratchpad
