@@ -37,7 +37,6 @@ function git() {
 }
 
 alias vi="nvim --clean"
-alias vim="NVIM_APPNAME=nvim_zapling nvim"
 
 alias k="kubectl"
 alias kx="kubectx"

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+NVIM_APPNAME=nvim_zapling /usr/bin/nvim $@
