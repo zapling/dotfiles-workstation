@@ -1,5 +1,6 @@
 local filetypes = {
     'yaml',
+    'yaml.helm-values',
     'helm',
     'html',
     'htmlangular',
