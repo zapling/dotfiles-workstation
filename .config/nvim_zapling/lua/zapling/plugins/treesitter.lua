@@ -22,6 +22,7 @@ local filetypes = {
     -- Devops
     'terraform',
     'hcl',
+    'cue',
 }
 
 return {
