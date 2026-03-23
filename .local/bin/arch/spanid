@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+id=$(uuidgen | tr -d "-" | head -c 16)
+printf '%s\n' "$id"
