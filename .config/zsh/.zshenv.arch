@@ -5,3 +5,7 @@ export PATH=~/.local/share/nvim_zapling/mason/bin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 export GOPRIVATE=github.com/ertia-io/*
+
+# RYUK has to be privileged so it can prune other containers when running on SELinux.
+# https://github.com/testcontainers/testcontainers-java/issues/7177
+export TESTCONTAINERS_RYUK_CONTAINER_PRIVILEGED=true
