@@ -1,4 +1,5 @@
 local filetypes = {
+    'lua',
     'yaml',
     'yaml.helm-values',
     'helm',
