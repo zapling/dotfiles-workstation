@@ -1,15 +1,15 @@
 {
-  "angular-language-server": "20.1.1",
+  "angular-language-server": "21.2.5",
   "bash-language-server": "5.6.0",
-  "biome": "2.1.1",
   "css-lsp": "4.10.0",
   "eslint-lsp": "4.10.0",
-  "golangci-lint": "v2.5.0",
+  "golangci-lint": "v2.11.4",
   "gopls": "v0.21.1",
-  "lua-language-server": "3.15.0",
+  "lua-language-server": "3.17.1",
   "omnisharp": "v1.39.14",
-  "prettier": "3.6.2",
-  "shellcheck": "v0.10.0",
-  "templ": "v0.3.906",
-  "vtsls": "0.2.9"
+  "prettier": "3.8.1",
+  "shellcheck": "v0.11.0",
+  "templ": "v0.3.1001",
+  "vtsls": "0.3.0",
+  "yaml-language-server": "1.21.0"
 }
