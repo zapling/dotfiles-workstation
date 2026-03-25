@@ -9,6 +9,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 eval "$(direnv hook zsh)"
+eval "$(mise activate zsh)"
 
 # Dialog before doing stupid stuff
 function git() {
