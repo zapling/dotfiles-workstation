@@ -39,6 +39,7 @@ return {
       ["angularls"] = "angular-language-server",
       ["cssls"] = "css-lsp",
       ["eslint"] = "eslint-lsp",
+      ["cue"] = "cue",
     }
 
     -- nvim/lint name to mason package name
