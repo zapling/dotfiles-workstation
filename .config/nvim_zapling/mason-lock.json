@@ -10,7 +10,7 @@
   "omnisharp": "v1.39.14",
   "prettier": "3.8.1",
   "shellcheck": "v0.11.0",
-  "templ": "v0.3.1001",
+  "templ": "v0.3.1020",
   "vtsls": "0.3.0",
   "yaml-language-server": "1.21.0"
 }

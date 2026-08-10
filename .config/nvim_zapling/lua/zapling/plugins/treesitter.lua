@@ -1,42 +1,36 @@
 local filetypes = {
-    'bash',
-    'markdown',
-    'yaml',
-    'json',
-    'lua',
-    'python',
-    'sql',
+  'bash',
+  'markdown',
+  'yaml',
+  'json',
+  'lua',
+  'python',
+  'sql',
 
-    -- Go
-    'go',
-    'gomod',
+  -- Go
+  'go',
+  'gomod',
+  'templ',
 
-    -- Frontend
-    'html',
-    'css',
-    'javascript',
-    'typescript',
-    'tsx',
-    'angular',
+  -- Frontend
+  'html',
+  'css',
+  'javascript',
+  'typescript',
+  'tsx',
+  'angular',
 
-    -- Devops
-    'terraform',
-    'hcl',
-    'cue',
+  -- Devops
+  'terraform',
+  'hcl',
+  'cue',
 }
 
 return {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-        ---@diagnostic disable-next-line:missing-fields
-        require('nvim-treesitter.configs').setup({
-            ensure_installed = filetypes,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false, -- VERY important to disable
-            }
-        })
-        vim.treesitter.language.register('bash', { 'dotenv' })
-    end,
+  'nvim-treesitter/nvim-treesitter',
+  build = ':TSUpdate',
+  config = function()
+    require('nvim-treesitter').install(filetypes)
+    vim.treesitter.language.register('bash', { 'dotenv ' })
+  end,
 }

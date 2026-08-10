@@ -36,7 +36,7 @@ return {
 
     -- Prettier should only run if we find a configuration for it.
     ---@diagnostic disable-next-line: param-type-mismatch
-    conform.formatters.prettier = vim.tbl_deep_extend('force', conform.formatters.prettier, {
+    conform.formatters.prettier = vim.tbl_deep_extend('force', require('conform.formatters.prettier'), {
       cwd = require('conform.util').root_file({
         '.prettierrc',
         '.prettierrc.js'
