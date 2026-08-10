@@ -3,6 +3,7 @@ export EDITOR=/usr/bin/nvim
 export PATH=~/.local/bin/arch:$PATH
 export PATH=~/.local/share/nvim_zapling/mason/bin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH=~/go/bin:$PATH
 
 export GOPRIVATE=github.com/ertia-io/*
 

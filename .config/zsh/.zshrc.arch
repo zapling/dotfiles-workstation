@@ -59,3 +59,4 @@ alias aws="docker run --rm \
   amazon/aws-cli"
 
 source <(ertia completion zsh)
+# source <(opm completion zsh)
