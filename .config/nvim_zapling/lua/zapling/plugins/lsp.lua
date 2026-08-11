@@ -24,6 +24,9 @@ return {
     vim.lsp.enable('gopls')
     vim.lsp.enable('templ')
 
+    -- Python
+    vim.lsp.enable('basedpyright')
+
     -- Frontend
     vim.lsp.enable('vtsls')
     vim.lsp.config('angularls', {
@@ -33,7 +36,6 @@ return {
     })
     vim.lsp.enable('angularls')
     vim.lsp.enable('cssls')
-    -- vim.lsp.enable('biome')
     vim.lsp.enable('eslint')
 
     -- CS/dotnet
@@ -42,6 +44,15 @@ return {
     -- Misc
     vim.lsp.enable('lua_ls')
     vim.lsp.enable('bashls')
+    vim.lsp.config('yamlls', {
+      settings = {
+        yaml = {
+          format = {
+            bracketSpacing = false,
+          }
+        }
+      }
+    })
     vim.lsp.enable('yamlls')
     vim.lsp.enable('cue')
   end,
