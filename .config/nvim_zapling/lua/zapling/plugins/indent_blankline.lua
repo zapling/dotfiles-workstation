@@ -1,6 +1,6 @@
 local filetypes = {
   'lua',
-  'yaml',
+  'yaml', 'yml',
   'yaml.helm-values', 'helm',
   'html', 'htmlangular',
   'json',
