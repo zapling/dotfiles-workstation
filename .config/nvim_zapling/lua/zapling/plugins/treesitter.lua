@@ -1,18 +1,23 @@
 local filetypes = {
-  'bash',
-  'markdown',
-  'yaml',
-  'json',
   'lua',
   'python',
+
+  'markdown',
+
+  'yaml',
+  'json',
+
+  'bash',
+  'make',
+
   'sql',
 
-  -- Go
   'go',
   'gomod',
-  'templ',
+  'templ', -- https://templ.guide
 
-  -- Frontend
+  'c_sharp',
+
   'html',
   'css',
   'javascript',
@@ -20,10 +25,10 @@ local filetypes = {
   'tsx',
   'angular',
 
-  -- Devops
   'terraform',
   'hcl',
   'cue',
+  'jsonnet',
 }
 
 return {
@@ -31,6 +36,14 @@ return {
   build = ':TSUpdate',
   config = function()
     require('nvim-treesitter').install(filetypes)
-    vim.treesitter.language.register('bash', { 'dotenv ' })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function()
+        -- attempt to start treesitter in all new buffers
+        pcall(vim.treesitter.start)
+      end,
+    })
+
+    vim.treesitter.language.register('bash', { 'dotenv' })
   end,
 }

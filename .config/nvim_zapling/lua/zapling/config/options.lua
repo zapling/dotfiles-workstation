@@ -25,18 +25,18 @@ vim.opt.cursorlineopt = { 'number' }
 
 -- colorcolumn, but disable for windows
 vim.opt.colorcolumn = '100'
-vim.api.nvim_create_autocmd({
-  "WinNew",
-  -- "BufWinEnter"
-}, {
-  callback = function()
-    local win = vim.api.nvim_get_current_win()
-    local cfg = vim.api.nvim_win_get_config(win)
-    if cfg.relative ~= "" then
-      vim.wo[win].colorcolumn = ""
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("WinNew", {
+--   callback = function()
+--     vim.schedule(function()
+--       for _, win in ipairs(vim.api.nvim_list_wins()) do
+--         local cfg = vim.api.nvim_win_get_config(win)
+--         if cfg.relative ~= "" then
+--           vim.wo[win].colorcolumn = ""
+--         end
+--       end
+--     end)
+--   end,
+-- })
 
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = false
